@@ -1,0 +1,15 @@
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\bin\Debug\TimeManager.exe.config
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\bin\Debug\TimeManager.exe
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\bin\Debug\TimeManager.pdb
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.csprojAssemblyReference.cache
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\MainWindow.g.cs
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\App.g.cs
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager_MarkupCompile.cache
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager_MarkupCompile.lref
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\MainWindow.baml
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.g.resources
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.Properties.Resources.resources
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.csproj.GenerateResource.cache
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.csproj.CoreCompileInputs.cache
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.exe
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.pdb
