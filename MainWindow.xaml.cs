@@ -25,9 +25,22 @@ namespace TimeManager
             InitializeComponent();
         }
 
-        private void BtnClose(object sender, RoutedEventArgs e)
+        private void BtnSet_Click(object sender, RoutedEventArgs e)
+        {
+            //setting form 오버레이
+        }
+
+        private void BtnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+            //후에 우측 하단에 작게 창 띄워놓기로 변경
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+
     }
 }

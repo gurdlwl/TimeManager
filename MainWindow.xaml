@@ -8,12 +8,19 @@
         Title="MainWindow" Height="500" Width="800" WindowState="Maximized"
         WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Grid>
-        <DockPanel VerticalAlignment="Top">
-            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0, 10, 0, 0">
-                <Button Click="" Name="" Width="30" Height="30" Margin="0, 0, 10, 0" BorderThickness="0"/>
-                <Button Click="" Name="" Width="30" Height="30" Margin="0, 0, 10, 0"  BorderThickness="0"/>
-                <Button Click="BtnClose_Click" Name="Close" Width="30" Height="30" Margin="0, 0, 10, 0" BorderThickness="0"/>
+        <DockPanel Name="CustomTitle" VerticalAlignment="Top">
+
+            <TextBlock Name="TbCurrentTime" HorizontalAlignment="Center">Current Time</TextBlock> <!-- 문제 -->
+            
+            <StackPanel  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0, 10, 0, 10">
+                <Button Click="BtnSet_Click" Name="BtnSet" Width="30" Height="30" Margin="0, 0, 10, 0" BorderThickness="0"/>
+                <Button Click="BtnMinimize_Click" Name="BtnMinimize" Width="30" Height="30" Margin="0, 0, 10, 0"  BorderThickness="0"/>
+                <Button Click="BtnClose_Click" Name="BtnClose" Width="30" Height="30" Margin="0, 0, 10, 0" BorderThickness="0"/>
             </StackPanel>
+        </DockPanel>
+        <DockPanel Name="Main" VerticalAlignment="Center">
+            <TextBlock Name="TbTimeFlow">TimeFlow</TextBlock>
+            <TextBlock Name="TbUserMemo">UserMemo</TextBlock>
         </DockPanel>
     </Grid>
 </Window>
