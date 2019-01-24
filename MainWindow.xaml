@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TimeManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="1080" Width="1920">
+        Title="MainWindow" Height="400" Width="500" WindowState="Maximized"
+        WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Grid>
+        <StackPanel>
+            <Button Width="30" Height="30" Margin="390,10,80,360" BorderThickness="0"/>
+            <Button Width="30" Height="30" Margin="425,10,45,360" BorderThickness="0"/>
+            <Button Click="BtnClose" Width="30" Height="30" Margin="460,10,10,360" BorderThickness="0"/>
+        </StackPanel>
         
     </Grid>
 </Window>

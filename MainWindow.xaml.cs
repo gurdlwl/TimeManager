@@ -24,5 +24,10 @@ namespace TimeManager
         {
             InitializeComponent();
         }
+
+        private void BtnClose(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
