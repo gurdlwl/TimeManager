@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using System.Threading;
 
 namespace TimeManager
 {
@@ -20,9 +23,29 @@ namespace TimeManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        DispatcherTimer dispatcherTimer = new DispatcherTimer();
+        Stopwatch stopwatch = new Stopwatch();
+        string swTime = String.Empty;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            TbCurrentTime.Text = DateTime.Now.ToLongTimeString();
+
+            dispatcherTimer.Tick += Dt_Tick;
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 0, 0, 1);
+        }
+
+        void Dt_Tick(object sender, EventArgs e)
+        {
+            if (stopwatch.IsRunning)
+            {
+                TimeSpan ts = stopwatch.Elapsed;
+                swTime = String.Format("{0:00}:{1:00}:{2:00}:{3:00}",
+                ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds / 10);
+                TbTimeFlow.Text = swTime;
+            }
         }
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
@@ -33,13 +56,40 @@ namespace TimeManager
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
-            //후에 우측 하단에 작게 창 띄워놓기로 변경
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
+        private void TbCurrentTime_load(object sender, RoutedEventArgs e)
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void TbTimeFlow_LeftClick(object sender, RoutedEventArgs e)
+        {
+            TbTimeFlow.Text = "000";
+            stopwatch.Start();
+            dispatcherTimer.Start();
+        }
+
+        private void TbTimeFlow_RightClick(object sender, RoutedEventArgs e)
+        {
+            stopwatch.Reset();
+            TbTimeFlow.Text = "00:00:00:00";
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            TbCurrentTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        
 
 
     }

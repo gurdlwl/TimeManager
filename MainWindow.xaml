@@ -5,22 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TimeManager"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="800" WindowState="Maximized"
-        WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+        Title="MainWindow" Height="900" Width="1400" WindowState="Maximized"
+        WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <DockPanel Name="CustomTitle" VerticalAlignment="Top">
 
-            <TextBlock Name="TbCurrentTime" HorizontalAlignment="Center">Current Time</TextBlock> <!-- 문제 -->
+            <TextBlock Loaded="TbCurrentTime_load" Name="TbCurrentTime" VerticalAlignment="Center"
+                       FontSize="35" FontWeight="Bold" Margin="10 ,0 ,0, 0">Current Time</TextBlock> <!-- 문제 -->
             
             <StackPanel  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0, 10, 0, 10">
-                <Button Click="BtnSet_Click" Name="BtnSet" Width="30" Height="30" Margin="0, 0, 10, 0" BorderThickness="0"/>
-                <Button Click="BtnMinimize_Click" Name="BtnMinimize" Width="30" Height="30" Margin="0, 0, 10, 0"  BorderThickness="0"/>
-                <Button Click="BtnClose_Click" Name="BtnClose" Width="30" Height="30" Margin="0, 0, 10, 0" BorderThickness="0"/>
+                <Button Click="BtnSet_Click" Name="BtnSet" Width="30" Height="30" 
+                        Margin="0, 0, 10, 0" BorderThickness="0" Background="#C8C8C8"/>
+                <Button Click="BtnMinimize_Click" Name="BtnMinimize" Width="30" Height="30" 
+                        Margin="0, 0, 10, 0"  BorderThickness="0" Background="#9EA4FF"/>
+                <Button Click="BtnClose_Click" Name="BtnClose" Width="30" Height="30" 
+                        Margin="0, 0, 10, 0" BorderThickness="0" Background="#FF9292"/>
             </StackPanel>
         </DockPanel>
-        <DockPanel Name="Main" VerticalAlignment="Center">
-            <TextBlock Name="TbTimeFlow">TimeFlow</TextBlock>
-            <TextBlock Name="TbUserMemo">UserMemo</TextBlock>
-        </DockPanel>
+        
+        <StackPanel Name="Main" VerticalAlignment="Center">
+            <TextBlock MouseLeftButtonDown="TbTimeFlow_LeftClick" MouseRightButtonDown="TbTimeFlow_RightClick" Name="TbTimeFlow" HorizontalAlignment="Center"
+                       FontSize="200" FontWeight="Bold" Margin="0, 0, 0, 100">00:00:00:00</TextBlock>
+            <TextBlock Name="TbUserMemo" HorizontalAlignment="Center"
+                       FontSize="160" FontWeight="Bold">UserMemo</TextBlock>
+        </StackPanel>
     </Grid>
 </Window>
