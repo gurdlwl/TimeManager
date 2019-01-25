@@ -8,11 +8,22 @@
         Title="MainWindow" Height="900" Width="1400" WindowState="Maximized"
         WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Style.Setters>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="30"></Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style.Setters>
+            </Style>
+        </Grid.Resources>
         <DockPanel Name="CustomTitle" VerticalAlignment="Top">
-
             <TextBlock Loaded="TbCurrentTime_load" Name="TbCurrentTime" VerticalAlignment="Center"
                        FontSize="35" FontWeight="Bold" Margin="10 ,0 ,0, 0">Current Time</TextBlock> <!-- 문제 -->
-            
             <StackPanel  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0, 10, 0, 10">
                 <Button Click="BtnSet_Click" Name="BtnSet" Width="30" Height="30" 
                         Margin="0, 0, 10, 0" BorderThickness="0" Background="#C8C8C8"/>
@@ -24,7 +35,8 @@
         </DockPanel>
         
         <StackPanel Name="Main" VerticalAlignment="Center">
-            <TextBlock MouseLeftButtonDown="TbTimeFlow_LeftClick" MouseRightButtonDown="TbTimeFlow_RightClick" Name="TbTimeFlow" HorizontalAlignment="Center"
+            <TextBlock MouseLeftButtonDown="TbTimeFlow_LeftClick" MouseRightButtonDown="TbTimeFlow_RightClick"
+                       Name="TbTimeFlow" HorizontalAlignment="Center"
                        FontSize="200" FontWeight="Bold" Margin="0, 0, 0, 100">00:00:00:00</TextBlock>
             <TextBlock Name="TbUserMemo" HorizontalAlignment="Center"
                        FontSize="160" FontWeight="Bold">UserMemo</TextBlock>
