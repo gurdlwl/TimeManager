@@ -13,3 +13,5 @@ C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.cspr
 C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.csproj.CoreCompileInputs.cache
 C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.exe
 C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\TimeManager.pdb
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\Setting.g.cs
+C:\Users\ijh0329\source\repos\TimeManager\TimeManager\obj\Debug\Setting.baml

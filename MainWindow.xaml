@@ -6,25 +6,27 @@
         xmlns:local="clr-namespace:TimeManager"
         mc:Ignorable="d"
         Title="MainWindow" Height="900" Width="1400" WindowState="Maximized"
-        WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid>
+        WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        KeyDown="TbTimeFlow_KeyDown" >
+    <Grid x:Name="Grid">
         <Grid.Resources>
             <Style TargetType="Button">
                 <Style.Setters>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="Button">
-                                <Border CornerRadius="30"></Border>
+                                <Border CornerRadius="15" Background="#9EA4FF"></Border>
                             </ControlTemplate>
                         </Setter.Value>
                     </Setter>
                 </Style.Setters>
             </Style>
         </Grid.Resources>
+        
         <DockPanel Name="CustomTitle" VerticalAlignment="Top">
-            <TextBlock Loaded="TbCurrentTime_load" Name="TbCurrentTime" VerticalAlignment="Center"
-                       FontSize="35" FontWeight="Bold" Margin="10 ,0 ,0, 0">Current Time</TextBlock> <!-- 문제 -->
-            <StackPanel  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0, 10, 0, 10">
+            <TextBlock Loaded="TbCurrentTime_load" Name="TbCurrentTime" VerticalAlignment="Center" Foreground="#5E5E5E"
+                       FontSize="35" FontWeight="Bold" Margin="10 ,0 ,0, 0">Current Time</TextBlock>
+            <StackPanel  HorizontalAlignment="Right" Orientation="Horizontal" Margin="0, 10, 5, 10">
                 <Button Click="BtnSet_Click" Name="BtnSet" Width="30" Height="30" 
                         Margin="0, 0, 10, 0" BorderThickness="0" Background="#C8C8C8"/>
                 <Button Click="BtnMinimize_Click" Name="BtnMinimize" Width="30" Height="30" 
@@ -36,9 +38,9 @@
         
         <StackPanel Name="Main" VerticalAlignment="Center">
             <TextBlock MouseLeftButtonDown="TbTimeFlow_LeftClick" MouseRightButtonDown="TbTimeFlow_RightClick"
-                       Name="TbTimeFlow" HorizontalAlignment="Center"
+                       Name="TbTimeFlow" HorizontalAlignment="Center" Foreground="#5E5E5E"
                        FontSize="200" FontWeight="Bold" Margin="0, 0, 0, 100">00:00:00:00</TextBlock>
-            <TextBlock Name="TbUserMemo" HorizontalAlignment="Center"
+            <TextBlock Name="TbUserMemo" HorizontalAlignment="Center" Foreground="#5E5E5E"
                        FontSize="160" FontWeight="Bold">UserMemo</TextBlock>
         </StackPanel>
     </Grid>

@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.Threading;
+using System.Windows.Media.Effects;
 
 namespace TimeManager
 {
@@ -30,7 +31,7 @@ namespace TimeManager
         public MainWindow()
         {
             InitializeComponent();
-
+            
             TbCurrentTime.Text = DateTime.Now.ToLongTimeString();
 
             dispatcherTimer.Tick += Dt_Tick;
@@ -50,7 +51,8 @@ namespace TimeManager
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
         {
-            //setting form 오버레이
+            Setting setform = new Setting();
+            setform.ShowDialog();   
         }
 
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)
@@ -73,15 +75,26 @@ namespace TimeManager
 
         private void TbTimeFlow_LeftClick(object sender, RoutedEventArgs e)
         {
-            TbTimeFlow.Text = "000";
             stopwatch.Start();
             dispatcherTimer.Start();
         }
 
         private void TbTimeFlow_RightClick(object sender, RoutedEventArgs e)
         {
-            stopwatch.Reset();
-            TbTimeFlow.Text = "00:00:00:00";
+            if (stopwatch.IsRunning)
+            {
+                stopwatch.Stop();
+                dispatcherTimer.Stop();
+            }
+        }
+
+        private void TbTimeFlow_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Delete || e.Key == Key.Escape)
+            {
+                stopwatch.Reset();
+                TbTimeFlow.Text = "00:00:00:00";
+            }
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -90,7 +103,5 @@ namespace TimeManager
         }
 
         
-
-
     }
 }
