@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TimeManager"
         mc:Ignorable="d"
-        Title="Setting" Height="500" Width="800" Background="Azure"
+        Title="Setting" Height="500" Width="800" Background="White"
         WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Grid>
         <Grid.Resources>
@@ -26,12 +26,13 @@
             <TextBlock HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Foreground="#5E5E5E">Setting</TextBlock>
         </DockPanel>
         <DockPanel VerticalAlignment="Center">
-            <TextBox Width="650" Height="50" BorderThickness="0" ></TextBox>
+            <TextBox Name="TbInputUserMemo" Width="650" Height="50" BorderThickness="0" VerticalAlignment="Center"
+                     FontSize="33" FontWeight="Bold" Foreground="#5E5E5E" Background="#DDDDDD"></TextBox>
         </DockPanel>
         <DockPanel VerticalAlignment="Bottom">
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" Margin="0, 0, 0, 10">
-                <Button Width="50" Height="50" Background="White" Margin="0, 0, 15, 0"></Button>
-                <Button Width="50" Height="50" Background="White" Margin="0, 0, 10, 0"></Button>
+                <Button Click="BtnCancel_Click"  Name="BtnCancel" Width="50" Height="50" Background="White" Margin="0, 0, 15, 0"></Button>
+                <Button Click="BtnOk_Click" Name="BtnOk" Width="50" Height="50" Background="White" Margin="0, 0, 10, 0"></Button>
             </StackPanel>
         </DockPanel>
     </Grid>

@@ -23,5 +23,16 @@ namespace TimeManager
         {
             InitializeComponent();
         }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtnOk_Click(object sender, RoutedEventArgs e)
+        {
+            //TbInputUserMemo.Text; 
+            this.Close();
+        }
     }
 }
