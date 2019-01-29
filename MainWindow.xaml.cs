@@ -54,7 +54,7 @@ namespace TimeManager
             Grid.Background = Brushes.LightGray;
 
             Setting setform = new Setting();
-            setform.ShowDialog();   
+            setform.ShowDialog();
         }
 
         private void BtnMinimize_Click(object sender, RoutedEventArgs e)

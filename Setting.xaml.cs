@@ -18,8 +18,13 @@ namespace TimeManager
     /// Setting.xaml에 대한 상호 작용 논리
     /// </summary>
     /// 
+
     public partial class Setting : Window
     {
+
+        public delegate void IsClosed();
+        public event IsClosed isClosed;
+
         public Setting()
         {
             InitializeComponent();
@@ -27,6 +32,7 @@ namespace TimeManager
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
+            isClosed();
             this.Close();
         }
 
