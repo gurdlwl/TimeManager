@@ -51,8 +51,6 @@ namespace TimeManager
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
         {
-            Grid.Background = Brushes.LightGray;
-
             Setting setform = new Setting();
             setform.ShowDialog();
         }

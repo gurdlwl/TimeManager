@@ -21,9 +21,7 @@ namespace TimeManager
 
     public partial class Setting : Window
     {
-
-        public delegate void IsClosed();
-        public event IsClosed isClosed;
+        UserMemo ut = new UserMemo();
 
         public Setting()
         {
@@ -32,14 +30,11 @@ namespace TimeManager
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
-            isClosed();
             this.Close();
         }
 
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
-            
-            //TbInputUserMemo.Text; 
             this.Close();
         }
     }
