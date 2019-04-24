@@ -24,9 +24,16 @@ namespace TimeManager
     /// </summary>
     public partial class MainWindow : Window
     {
+        UserMemo userMemo = new UserMemo();
         DispatcherTimer dispatcherTimer = new DispatcherTimer();
         Stopwatch stopwatch = new Stopwatch();
-        string swTime = String.Empty;
+        string swTime = string.Empty;
+
+        public class UserMemo
+        {
+            public string userMemo
+            { set; get; }
+        }
 
         public MainWindow()
         {
@@ -51,7 +58,7 @@ namespace TimeManager
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
         {
-            Setting setform = new Setting();
+            Setting setform = new Setting(userMemo);
             setform.ShowDialog();
         }
 
@@ -101,5 +108,6 @@ namespace TimeManager
         {
             TbCurrentTime.Text = DateTime.Now.ToLongTimeString();
         }
+       
     }
 }

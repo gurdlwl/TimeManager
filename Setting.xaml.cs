@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static TimeManager.MainWindow;
 
 namespace TimeManager
 {
@@ -21,10 +22,11 @@ namespace TimeManager
 
     public partial class Setting : Window
     {
-        UserMemo ut = new UserMemo();
+        UserMemo userMemo;
 
-        public Setting()
+        public Setting(UserMemo userMemo)
         {
+            this.userMemo = userMemo;
             InitializeComponent();
         }
 
@@ -35,6 +37,7 @@ namespace TimeManager
 
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
+            userMemo.userMemo = TbInputUserMemo.Text;
             this.Close();
         }
     }
