@@ -41,7 +41,7 @@
                        Name="TbTimeFlow" HorizontalAlignment="Center" Foreground="#5E5E5E"
                        FontSize="200" FontWeight="Bold" Margin="0, 0, 0, 100">00:00:00:00</TextBlock>
             <TextBlock Name="TbUserMemo" HorizontalAlignment="Center" Foreground="#5E5E5E"
-                       FontSize="160" FontWeight="Bold">UserMemo</TextBlock>
+                       FontSize="160" FontWeight="Bold" Text="UserMemo"></TextBlock>
         </StackPanel>
     </Grid>
 </Window>

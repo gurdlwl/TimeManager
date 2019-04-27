@@ -22,23 +22,22 @@ namespace TimeManager
 
     public partial class Setting : Window
     {
-        UserMemo userMemo;
+        UserMemo UserMemo = new UserMemo();
 
-        public Setting(UserMemo userMemo)
+        public Setting()
         {
-            this.userMemo = userMemo;
-            TbInputUserMemo.Text = this.userMemo.userMemo;
             InitializeComponent();
         }
 
         private void BtnCancel_Click(object sender, RoutedEventArgs e)
         {
+
             this.Close();
         }
 
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
-            userMemo.userMemo = TbInputUserMemo.Text;
+            UserMemo.userMemo = TbInputUserMemo.Text;
             this.Close();
         }
     }

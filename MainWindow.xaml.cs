@@ -29,12 +29,6 @@ namespace TimeManager
         Stopwatch stopwatch = new Stopwatch();
         string swTime = string.Empty;
 
-        public class UserMemo
-        {
-            public string userMemo
-            { set; get; }
-        }
-
         public MainWindow()
         {
             InitializeComponent();
@@ -58,7 +52,7 @@ namespace TimeManager
 
         private void BtnSet_Click(object sender, RoutedEventArgs e)
         {
-            Setting setform = new Setting(userMemo);
+            Setting setform = new Setting();
             setform.ShowDialog();
         }
 
