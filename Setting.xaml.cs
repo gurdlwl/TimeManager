@@ -27,6 +27,7 @@ namespace TimeManager
         public Setting(UserMemo userMemo)
         {
             this.userMemo = userMemo;
+            TbInputUserMemo.Text = this.userMemo.userMemo;
             InitializeComponent();
         }
 
